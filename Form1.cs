@@ -6,6 +6,7 @@ namespace forum_12_12_2022_input_output_file
 {
     public partial class Form1 : Form
     {
+        public bool result = false;
         string? fileText =null;
         public Form1()
         {
@@ -69,6 +70,24 @@ namespace forum_12_12_2022_input_output_file
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string [] comp = fileText.Split("\n");
+            
+
+            //result = phrase.Contains("brown fox");      // result true
+            result = comp.Contains("lazy fox.");      // result false
+            if (result = true)
+            {
+                textBox1.Text += "12";
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }
