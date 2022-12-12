@@ -74,15 +74,19 @@ namespace forum_12_12_2022_input_output_file
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string [] comp = fileText.Split("\n");
-            
+            string [] comp = fileText.Split(" ");
 
-            //result = phrase.Contains("brown fox");      // result true
-            result = comp.Contains("lazy fox.");      // result false
-            if (result = true)
+            for (int i = 0; i < comp.Length; i++)
             {
-                textBox1.Text += "12";
+                string compProv = comp[i];
+                result = compProv.Contains("lazy");      // result false
+                if (result = true)
+                {
+                    textBox1.Text += i + " " + comp[i] + "\t";
+                }
             }
+            //result = phrase.Contains("brown fox");      // result true
+           
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
