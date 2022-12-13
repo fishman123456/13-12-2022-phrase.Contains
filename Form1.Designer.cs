@@ -116,6 +116,9 @@
             this.textBox1.Location = new System.Drawing.Point(0, 279);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.PlaceholderText = "-";
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(520, 131);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -131,7 +134,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.progressBar1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "U83";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

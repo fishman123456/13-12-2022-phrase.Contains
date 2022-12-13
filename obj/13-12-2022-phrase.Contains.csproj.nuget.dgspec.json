@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fishman_1\\Documents\\GitHub\\13-12-2022-phrase.Contains\\13-12-2022-phrase.Contains.csproj": {}
+    "C:\\Users\\Fishman.DB.CORP\\Documents\\GitHub\\13-12-2022-phrase.Contains\\13-12-2022-phrase.Contains.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fishman_1\\Documents\\GitHub\\13-12-2022-phrase.Contains\\13-12-2022-phrase.Contains.csproj": {
+    "C:\\Users\\Fishman.DB.CORP\\Documents\\GitHub\\13-12-2022-phrase.Contains\\13-12-2022-phrase.Contains.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fishman_1\\Documents\\GitHub\\13-12-2022-phrase.Contains\\13-12-2022-phrase.Contains.csproj",
+        "projectUniqueName": "C:\\Users\\Fishman.DB.CORP\\Documents\\GitHub\\13-12-2022-phrase.Contains\\13-12-2022-phrase.Contains.csproj",
         "projectName": "13-12-2022-phrase.Contains",
-        "projectPath": "C:\\Users\\Fishman_1\\Documents\\GitHub\\13-12-2022-phrase.Contains\\13-12-2022-phrase.Contains.csproj",
-        "packagesPath": "C:\\Users\\Fishman_1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fishman_1\\Documents\\GitHub\\13-12-2022-phrase.Contains\\obj\\",
+        "projectPath": "C:\\Users\\Fishman.DB.CORP\\Documents\\GitHub\\13-12-2022-phrase.Contains\\13-12-2022-phrase.Contains.csproj",
+        "packagesPath": "C:\\Users\\Fishman.DB.CORP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Fishman.DB.CORP\\Documents\\GitHub\\13-12-2022-phrase.Contains\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Fishman_1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Fishman.DB.CORP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

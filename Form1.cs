@@ -74,15 +74,20 @@ namespace forum_12_12_2022_input_output_file
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string [] comp = fileText.Split(" ");
-
+            string one, two;
+            string [] comp = fileText.Split("\r\n"); // разделение файла по строкам
+           
+              // result false
             for (int i = 0; i < comp.Length; i++)
             {
-                string compProv = comp[i];
-                result = compProv.Contains("lazy");      // result false
-                if (result = true)
+                
+            
+                //string compProv = comp[i];
+                result = comp[i].Contains("701-K2"); // искомая подстрока
+
+                if (result == true) // если нашли то   true
                 {
-                    textBox1.Text += i + " " + comp[i] + "\t";
+                    textBox1.Text += comp[i] +  " "+ "нашел\r\n"; // делаем определенные действия со строкой
                 }
             }
             //result = phrase.Contains("brown fox");      // result true
@@ -92,6 +97,20 @@ namespace forum_12_12_2022_input_output_file
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
            
+        }
+        // для разбивки текстовой строки массивами чаров
+        void Spl()
+        {
+            string str = null;
+            string[] strArr = null;
+            int count = 0;
+            str = "Welcome to CSharp split test scenario";
+            char[] splitchar = { 'W', 'C', 'o' };
+            strArr = str.Split(splitchar);
+            for (count = 0; count <= strArr.Length - 1; count++)
+            {
+                textBox1.Text += (strArr[count] + "\r\n");
+            }
         }
     }
 }
