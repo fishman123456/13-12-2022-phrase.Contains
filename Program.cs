@@ -13,5 +13,14 @@ namespace forum_12_12_2022_input_output_file
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
         }
+            public class Example_Remove_Du // метод удаления дубликатов НЕ ИСПОЛЬЗУЕТСЯ
+        {
+            public static List<T> removeDuplicates<T>(List<T> list)
+            {
+                return new HashSet<T>(list).ToList();
+            }
+        }
+    
+    
     }
 }
