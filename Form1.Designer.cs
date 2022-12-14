@@ -34,28 +34,34 @@
             this.button2 = new System.Windows.Forms.Button();
             this.Download = new System.Windows.Forms.ToolTip(this.components);
             this.Save = new System.Windows.Forms.ToolTip(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             this.Progress = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // progressBar1
             // 
-            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(0, 427);
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Location = new System.Drawing.Point(0, 249);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(520, 23);
+            this.progressBar1.Size = new System.Drawing.Size(866, 36);
+            this.progressBar1.Step = 1;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 0;
             this.progressBar1.Tag = "";
             this.Progress.SetToolTip(this.progressBar1, "Скорость загрузки файла");
             this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            this.progressBar1.Validated += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(120, 12);
+            this.button1.Location = new System.Drawing.Point(0, 84);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(280, 79);
             this.button1.TabIndex = 1;
@@ -68,9 +74,9 @@
             // 
             this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(120, 97);
+            this.button2.Location = new System.Drawing.Point(286, 84);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(280, 69);
+            this.button2.Size = new System.Drawing.Size(280, 79);
             this.button2.TabIndex = 2;
             this.button2.Text = "Открыть";
             this.Save.SetToolTip(this.button2, "Открытие файла");
@@ -84,6 +90,18 @@
             // Save
             // 
             this.Save.Popup += new System.Windows.Forms.PopupEventHandler(this.Save_Popup);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button4.Location = new System.Drawing.Point(572, 84);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 79);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Выход";
+            this.Save.SetToolTip(this.button4, "Открытие файла");
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Progress
             // 
@@ -102,7 +120,7 @@
             // 
             this.button3.Enabled = false;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(120, 188);
+            this.button3.Location = new System.Drawing.Point(0, 169);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(280, 69);
             this.button3.TabIndex = 3;
@@ -112,23 +130,33 @@
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(0, 279);
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox1.Location = new System.Drawing.Point(0, 291);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "-";
             this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(520, 131);
+            this.textBox1.Size = new System.Drawing.Size(866, 159);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(866, 78);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 450);
+            this.ClientSize = new System.Drawing.Size(866, 450);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -154,5 +182,7 @@
         private SaveFileDialog openFileDialog2;
         private Button button3;
         private TextBox textBox1;
+        private RichTextBox richTextBox1;
+        private Button button4;
     }
 }

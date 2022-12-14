@@ -36,7 +36,7 @@ namespace forum_12_12_2022_input_output_file
             Form2 form2 = new Form2(fileText);
             form2.ShowDialog();
 
-            this.Close();
+           
         }
 
         private void progressBar1_Click(object sender, EventArgs e) // Изменение скорости загрузки
@@ -97,7 +97,7 @@ namespace forum_12_12_2022_input_output_file
             {
                 //string compProv = comp[i];
                 result = comp[i].Contains(list_no_du[k]); // искомая подстрока
-
+                richTextBox1.AppendText(list_no_du[k]+" "+i+" ");
                 if (result == true) // если нашли то   true
                 {
                     textBox1.Text += comp[i] + " " + "нашел\r\n"; // делаем определенные действия со строкой
@@ -124,6 +124,15 @@ namespace forum_12_12_2022_input_output_file
                 textBox1.Text += (strArr[count] + "\r\n");
             }
         }
-        
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
