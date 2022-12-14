@@ -1,5 +1,6 @@
 using System.IO;
 using System.Windows.Forms;
+
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace forum_12_12_2022_input_output_file
@@ -36,7 +37,7 @@ namespace forum_12_12_2022_input_output_file
             Form2 form2 = new Form2(fileText);
             form2.ShowDialog();
 
-           
+
         }
 
         private void progressBar1_Click(object sender, EventArgs e) // Изменение скорости загрузки
@@ -72,7 +73,7 @@ namespace forum_12_12_2022_input_output_file
         {
 
         }
-        
+
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -86,21 +87,31 @@ namespace forum_12_12_2022_input_output_file
                 string comp1 = item;
                 string[] comp2 = comp1.Split("\t"); // делим строку на две части и добавляем в массив
                 list.Add(comp2[0]);                 // добавляем в список только [0]- элемент, имя кабеля
-                
+
             }
             foreach (var item in list)
             {
                 list_no_du = list.Distinct().ToList(); // удаляем дубликаты из списка, будем использовать для поиска
             }
             // result false
-            for (int i = 0, k =1; i < comp.Length; i++)
+            int k = 0;
+            foreach (var item in list_no_du) // пока не пройдем по всем ключам(именам кабеля)
             {
-                //string compProv = comp[i];
-                result = comp[i].Contains(list_no_du[k]); // искомая подстрока
-                richTextBox1.AppendText(list_no_du[k]+" "+i+" ");
-                if (result == true) // если нашли то   true
+                if (k<list_no_du.Count-1)
                 {
-                    textBox1.Text += comp[i] + " " + "нашел\r\n"; // делаем определенные действия со строкой
+                    k++;
+                } 
+                for (int i = 0; i < comp.Length; i++)
+                {
+                    //string compProv = comp[i];
+                    result = comp[i].Contains(list_no_du[k]); // искомая подстрока
+
+                    if (result == true) // если нашли то   true
+                    {
+                        textBox1.Text += comp[i] + " " + "нашел\r\n"; // делаем определенные действия со строкой
+                        richTextBox1.Text += (list_no_du[k] + " i= " + i +" k= " +k+"\r ");// вывод на экран
+
+                    }
                 }
             }
             //result = phrase.Contains("brown fox");      // result true
