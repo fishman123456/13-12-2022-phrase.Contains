@@ -9,11 +9,13 @@ namespace forum_12_12_2022_input_output_file
     {
         public bool result = false;
         string? fileText = null;
+        string filename;
         public Form1()
         {
             InitializeComponent();
             openFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
-
+            // фильтр дл€ сохранени€ файлов
+            saveFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
         }
         private void button1_Click(object sender, EventArgs e) // TODO «ј√–”«»“№ ‘ј…Ћ
         {
@@ -110,7 +112,7 @@ namespace forum_12_12_2022_input_output_file
                     {
                         textBox1.Text += comp[i] + " " + "нашел\r\n"; // делаем определенные действи€ со строкой
                         richTextBox1.Text += (list_no_du[k] + " i= " + i +" k= " +k+"\r ");// вывод на экран
-
+                        filename += richTextBox1.Text[1];
                     }
                 }
             }
@@ -144,6 +146,26 @@ namespace forum_12_12_2022_input_output_file
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void saveFileDialog1_FileOk_1(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void button5_Save_Click(object sender, EventArgs e)
+        {
+           
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // получаем выбранный файл
+            
+            string filename = saveFileDialog1.FileName;
+            File.WriteAllText(filename, textBox1.Text);
+            //richTextBox1.SaveFile(filename, System.Windows.Forms.RichTextBoxStreamType.RichText);
+
+            // сохран€ем текст в файл
         }
     }
 }
